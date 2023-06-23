@@ -74,7 +74,7 @@
                 <button onclick="myFunction()" class="dropbtn" style="border: none;">Каталог</button>
                 <div id="myDropdown" class="dropdown-content">
                     <a href="catalog.php">Audi</a>
-                    <a href="BMW.php">BMW</a>
+                    <a href="dann.php?auto=BMW">BMW</a>
                     <a href="Chevrolet.php">Chevrolet</a>
                     <a href="Citroen.php">Citroen</a>
                     <a href="Ford.php">Ford</a>
