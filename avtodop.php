@@ -131,14 +131,138 @@
         }
     }
 </script>
+<div style="text-decoration: none;
+        background-color: #ff4f00;
+        padding: 4px;
+margin-top: 10px"
+<a href=""></a>
+</div>
+<div style="margin-top: 15px ">
+    <a href="" class="podorange" style="margin-left: 90px">Тест-драйвы</a>
+    <a href="" class="podorange">Отзывы</a>
+    <a href="" class="podorange">Новости</a>
+    <a href="" class="podorange">Обсудить</a>
+    <a href="" class="podorange">Расчет страховки</a>
+</div>
+<div style="text-decoration: none;
+        background-color: #dedede;
+        padding: 0.5px;
+margin-top: 10px">
+</div>
+<div style="display: flex">
+    <div class="form" style="border: 7px solid #ff4f00;
+    padding: 10px;
+border-radius: 0px;
+width: 300px;
+margin-left: 60px;
+margin-top: 20px;
+display: flex;
+flex-direction: column;
+">
+        <img src="<?
+        echo implode($_SESSION['avtodn']);
+        ?>">
 
-</body>
-</html>
-</span>
-</div>
-</div>
-<div class="foto">
-    <img src="Снимок3.PNG" style="margin-top: 10px">
+        <p href="" style="text-decoration: none;
+    font-family: Arial;
+    font-size: 17px;
+    color: black;
+    margin-right: 0px;
+    height: 10px;
+text-align: center">
+            <?
+            echo implode($_SESSION['avtodm']);
+            ?>
+        </p>
+        <div style="text-decoration: none;
+        background-color: #dedede;
+        padding: 0.5px;
+        margin-top: 10px">
+        </div>
+        <p href="" style="text-decoration: none;
+    font-family: Arial;
+    font-size: 17px;
+    color: black;
+    margin-right: 0px;
+    height: 10px;">
+            <strong>Тип двигателя</strong>
+        </p>
+        <p href="" style="text-decoration: none;
+    font-family: Arial;
+    font-size: 17px;
+    color: black;
+    margin-right: 0px;
+    height: 10px;">
+            <input type="checkbox">Бензин
+        </p>
+
+        <p href="" style="text-decoration: none;
+    font-family: Arial;
+    font-size: 17px;
+    color: black;
+    margin-right: 0px;
+    height: 10px;">
+            <input type="checkbox">Дизель
+        </p>
+        <div style="text-decoration: none;
+        background-color: #dedede;
+        padding: 0.5px;
+        margin-top: 10px">
+        </div>
+        <a href="avtodop.php" class="podorange" style="text-align: center;
+    margin-top: 25px">Сбросить все фильтры</a>
+    </div>
+    <div>
+        <p href="" style="text-decoration: none;
+    font-family: Arial;
+    font-size: 28px;
+    color: black;
+    margin-left: 40px;
+    height: 10px;">
+            <strong>Модификации и комплектации</strong>
+        </p>
+        <hr style="margin-top: 40px;
+        margin-left: 35px;
+        margin-bottom: 25px">
+        <div style="display:flex;
+        flex-direction: row">
+            <a href="" style="text-decoration: none;
+            font-family: Arial;
+            font-size: 25px;
+            color: blue;
+            margin-left: 40px;
+            height: 10px;
+            text-align: center;
+            color: #005bd1;
+            font-weight: bold;
+            text-align: left">
+                2.2 MT
+            </a>
+            <p href="" style="text-decoration: none;
+            font-family: Arial;
+            font-size: 25px;
+            color: black;
+            margin-left: 200px;
+            height: 10px;
+            text-align: right;
+margin-top: 0px">
+                379 Л.С.
+            </p>
+        </div>
+        <div>
+            <p href="" style="text-decoration: none;
+            font-family: Arial;
+            font-size: 17px;
+            color: black;
+            margin-left: 40px;
+            height: 10px;
+margin-top: 0px">
+                Автомат, передний привод, бензин, 4.7 с до 100 км/ч
+            </p>
+        </div>
+
+
+    </div>
 </div>
 </body>
 </html>

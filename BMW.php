@@ -36,7 +36,7 @@
 </div>
 <div>
     <div>
-        <div class="verh pov" style="margin-top: 10px">
+        <div class="verh pov">
             <div style="margin-left: 100px">
                 <a href="index.php"><img src="Снимок.PNG"></a>
             </div>
@@ -47,14 +47,11 @@
                 <span>
                     <a href="" class="nst">Статьи</a>
                 </span>
-                <span style="margin-right: 670px">
+                <span>
                     <a href="" class="nst">Тест-драйвы</a>
                 </span>
             </span>
-            <form action="dann.php" method="post">
-                <input type="text" name="poisk" placeholder="Поиск по сайту" class="reg nov">
-                <input type="submit">
-            </form>
+            <input type="text" placeholder="Поиск по сайту" class="reg nov">
         </div>
     </div>
 </div>
@@ -80,29 +77,7 @@
                     <a href="Ford.php">Ford</a>
                 </div>
             </div>
-
-            <script>
-            function myFunction() {
-                document.getElementById("myDropdown").classList.toggle("show");
-            }
-
-            window.onclick = function (event) {
-                if (!event.target.matches('.dropbtn')) {
-                    var dropdowns = document.getElementsByClassName("dropdown-content");
-                    var i;
-                    for (i = 0; i < dropdowns.length; i++) {
-                        var openDropdown = dropdowns[i];
-                        if (openDropdown.classList.contains('show')) {
-                            openDropdown.classList.remove('show');
-                        }
-                    }
-                }
-            }
-            </script>
-
-</body>
-</html>
-<div class="dropdown" style="margin-right: 10px">
+            <div class="dropdown" style="margin-right: 10px">
     <button onclick="myFunction()" class="dropbtn" style="border: none;">Отзывы</button>
     <div id="myDropdown" class="dropdown-content">
         <a href="catalog.php">Audi</a>
@@ -110,6 +85,9 @@
         <a href="Chevrolet.php">Chevrolet</a>
         <a href="Citroen.php">Citroen</a>
         <a href="Ford.php">Ford</a>
+    </div>
+</div>
+        </span>
     </div>
 </div>
 
@@ -132,13 +110,70 @@
     }
 </script>
 
-</body>
-</html>
-</span>
+
+<div>
+    <div class="foto" style="margin-left: 250px">
+        <h1 style="font-weight: 700;
+    font-size: 35px;
+    line-height: 36px;
+    text-transform: none;
+    display: inline;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+">
+            Модельный ряд <? echo $_SESSION['mash']; ?>(<? echo $_SESSION['mashrus']; ?>)
+        </h1>
+        <h2 style="color: #333;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    line-height: 24px;
+    vertical-align: middle;
+    width: 450px;
+    font-weight: 300;
+    font-family: Roboto Slab,Arial,serif;
+">
+            <? echo $_SESSION['opisanie']; ?>
+        </h2>
+    </div>
+
 </div>
-</div>
-<div class="foto">
-    <img src="Снимок3.PNG" style="margin-top: 10px">
+<div style="padding: 20px">
+    <div style="display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+    width: 640px">
+        <h3 style="margin-bottom: 20px;
+    position: relative;
+    font-family: Roboto,Arial,sans-serif;
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;">
+            Модели
+        </h3>
+        <div style="display: flex; flex-direction: row">
+            <? $c = 0; ?>
+            <? foreach ($_SESSION['neskolkon'] as $cells): ?>
+                <? foreach ($cells as $cell): ?>
+
+                    <a href="" style="display: flex; flex-direction: column; margin: 20px;">
+                        <div style="width: 180px; height: 112px">
+                            <img src="<? echo $cell ?>" style="width: 100%">
+                        </div>
+                        <? echo implode($_SESSION['neskolkom'][$c]) ?></a>
+
+                    <? $c++; ?>
+                <? endforeach; ?>
+            <? endforeach; ?>
+        </div>
+    </div>
 </div>
 </body>
 </html>
