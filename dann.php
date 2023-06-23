@@ -1,10 +1,15 @@
 <?php
 session_start();
-$x = $_POST['poisk'];
+
+if ( isset($_GET['auto']) ) $x = $_GET['auto'];
+else $x = $_POST['poisk'];
+
+
+
 if (empty($x)) {
     require 'index.php';
 } else {
-    $db = mysqli_connect('localhost', 'root', '', 'cursachs');
+    $db = mysqli_connect('localhost', 'aaa', 'password', 'cursachs');
     $auto = $db->query("select `marka` from `auto` where `marka`='$x' or `markarus`='$x'")->fetch_assoc();
     if (empty($auto)) {
         require 'index.php';
