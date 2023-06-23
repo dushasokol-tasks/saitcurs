@@ -1,5 +1,6 @@
 <!doctype html>
-<? session_start(); ?>
+<?php session_start();
+?>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -21,17 +22,17 @@
             <a href="" class="zalupa">Игры</a>
             <a href="" class="zalupa">Знакомства</a>
         </div>
-        <? if (!empty($_SESSION['name'])): ?>
+        <?php if (!empty($_SESSION['name'])): ?>
             <div class="reg">
-                <? echo $_SESSION['name']; ?>
+                <?php echo $_SESSION['name']; ?>
                 <a href="logout.php" class="vhod" style="text-decoration: none">Выйти</a>
             </div>
-        <? else: ?>
+        <?php else: ?>
             <div class="reg">
                 <a href="registr.php" style="color: blue">Регистрация</a>
                 <a href="auth.php" class="vhod" style="text-decoration: none">Войти</a>
             </div>
-        <? endif; ?>
+        <?php endif; ?>
     </div>
 </div>
 <div>
@@ -74,7 +75,7 @@
                 <button onclick="myFunction()" class="dropbtn" style="border: none;">Каталог</button>
                 <div id="myDropdown" class="dropdown-content">
                     <a href="catalog.php">Audi</a>
-                    <a href="BMW.php">BMW</a>
+                    <a href="dann.php?auto=BMW">BMW</a>
                     <a href="Chevrolet.php">Chevrolet</a>
                     <a href="Citroen.php">Citroen</a>
                     <a href="Ford.php">Ford</a>
@@ -84,7 +85,7 @@
     <button onclick="myFunction()" class="dropbtn" style="border: none;">Отзывы</button>
     <div id="myDropdown" class="dropdown-content">
         <a href="catalog.php">Audi</a>
-        <a href="BMW.php">BMW</a>
+        <a href="BMW.php?auto=BMW">BMW</a>
         <a href="Chevrolet.php">Chevrolet</a>
         <a href="Citroen.php">Citroen</a>
         <a href="Ford.php">Ford</a>
@@ -127,7 +128,7 @@
     outline: 0;
     border: 0;
 ">
-            Модельный ряд <? echo $_SESSION['mash']; ?>(<? echo $_SESSION['mashrus']; ?>)
+            Модельный ряд <?php echo $_SESSION['mash']; ?>(<?php echo $_SESSION['mashrus']; ?>)
         </h1>
         <h2 style="color: #333;
     margin-bottom: 10px;
@@ -139,7 +140,7 @@
     font-weight: 300;
     font-family: Roboto Slab,Arial,serif;
 ">
-            <? echo $_SESSION['opisanie']; ?>
+            <?php echo $_SESSION['opisanie']; ?>
         </h2>
     </div>
 
@@ -162,23 +163,28 @@
             Модели
         </h3>
         <div style="display: flex; flex-direction: row">
-            <? $c = 0; ?>
-            <? foreach ($_SESSION['neskolkon'] as $cells): ?>
-                <? foreach ($cells as $cell): ?>
+            <?php 
+            $c = 0;
+ 
+//               echo $_SESSION['neskolkon'];
+            foreach ($_SESSION['neskolkon'] as $cells){ 
+             foreach ($cells as $cell)
+             {
 
-                    <a href="avtodop.php" style="display: flex; flex-direction: column; margin: 20px;">
+                echo '<a href="avtodop.php" style="display: flex; flex-direction: column; margin: 20px;">
                         <div style="width: 180px; height: 112px">
-                            <img src="<? echo $cell ?>" style="width: 100%">
+                            <img src="'.$cell.'" style="width: 100%">
                         </div>
-                        <? echo implode($_SESSION['neskolkom'][$c]) ?></a>
+                        '.implode($_SESSION['neskolkom'][$c]).'</a>';
 
-                    <? $c++; ?>
-                <? endforeach; ?>
-            <? endforeach; ?>
+                   $c++; 
+              }
+             } 
+?>
         </div>
     </div>
 </div>
-<?
+<?php 
 $gg=count($_SESSION['neskolkon']);
 if ($gg>1) {
     $_SESSION['avtodn']=$_SESSION['neskolkon'][0];
